@@ -22,9 +22,17 @@
       & {
         flex: 0 1 46.9%;
         justify-content: space-around;
-        
+       .card-title {
+            font-size: 20px;
+        }
       }
     }
+    @media screen and (max-width: 359px) {
+        & {
+          flex: 0 1 99%;
+          justify-content: space-around;
+        }
+      }
 
     .card__footer {
       .card__year {
