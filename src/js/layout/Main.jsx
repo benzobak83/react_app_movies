@@ -7,6 +7,7 @@ class Main extends React.Component {
   state = {
     movies: [],
     isLoading: true,
+    lastSearch:''
   };
 
   url = {
@@ -25,7 +26,7 @@ class Main extends React.Component {
       }`
     )
       .then((res) => res.json())
-      .then((data) => this.setState({ movies: data.Search, isLoading: false }));
+      .then((data) => this.setState({ movies: data.Search, isLoading: false, lastSearch:search }));
   };
 
   componentDidMount() {
@@ -40,7 +41,7 @@ class Main extends React.Component {
           <Search refresh={this.refreshMovies} />
         </div>
         <div className="content container">
-          {isLoading ? <Preloader /> : <Movies movies={movies} />}
+          {isLoading ? <Preloader /> : <Movies movies={movies} lastSearch={this.state.lastSearch} />}
         </div>
       </>
     );

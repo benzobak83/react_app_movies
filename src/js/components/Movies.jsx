@@ -9,7 +9,8 @@ function Movies(props) {
       return <Movie key={movie.imdbID} {...movie} />;
     });
   } catch {
-    return <h1 className="blue-text text-darken-2 flow-text">Not found :(</h1>;
+    if (/[а-яА-Я]/.test(props.lastSearch)) return <h1 className="blue-text text-darken-2 flow-text">Нельзя на русском ;)</h1>;
+    else return <h1 className="blue-text text-darken-2 flow-text">Not found :(</h1>;
   }
 }
 
