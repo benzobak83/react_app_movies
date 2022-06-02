@@ -1,0 +1,45 @@
+.brand-logo {
+    margin-left: 10px;
+}
+.content.container {
+    min-height: calc(100vh - 70px - 64px);
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-start;
+    
+    .card.movie {
+        
+        flex: 0 1 24%;
+        box-sizing: border-box;
+        margin-right: 5px;
+        margin-left: 5px;
+        @media screen and (max-width: 1444px) {
+            & {
+                flex: 0 1 32%;
+            }
+        }
+        @media screen and (max-width: 1088px) {
+            & {
+                flex: 0 1 46.9%;
+                justify-content: space-around;
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+        
+        
+    }
+   
+}
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+}
+
+.label__filter   {
+    position: static !important;
+    margin-right: 40px;
+}
