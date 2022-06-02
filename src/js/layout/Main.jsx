@@ -20,7 +20,7 @@ class Main extends React.Component {
     console.log(type);
 
     fetch(
-      `http://www.omdbapi.com/?apikey=${this.url.api}&s=${search}${
+      `https://www.omdbapi.com/?apikey=${this.url.api}&s=${search}${
         type === "all" ? "" : `&type=${type}`
       }`
     )
