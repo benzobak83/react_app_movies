@@ -57,4 +57,26 @@
 .label__filter {
   position: static !important;
   margin-right: 40px;
+  @media screen and (max-width: 680px) {
+    display: flex;
+    flex: 0 0 40%;   
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 485px) {
+    display: flex;
+    flex: 0 0 40%;   
+    margin-right: 20px;
+}
+@media screen and (max-width: 346px) {
+    display: flex;
+    flex: 0 0 99%;   
+    margin-right: 20px;
+}
+}
+.row__filters {
+    @media screen and (max-width: 680px) {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
 }

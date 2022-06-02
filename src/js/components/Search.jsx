@@ -33,6 +33,7 @@ class Search extends React.Component {
     return (
       <div className="row">
         <div className="input-field col s12">
+         
           <input
             id="search"
             type="search"
@@ -51,7 +52,7 @@ class Search extends React.Component {
           >
             search
           </button>
-
+          <div className="row__filters">
           <label className="label__filter">
             <input
               name="group1"
@@ -88,6 +89,7 @@ class Search extends React.Component {
             />
             <span id="episode">Episodes only</span>
           </label>
+          </div>
         </div>
       </div>
     );
