@@ -26,8 +26,8 @@ function Movie(props) {
         <span className="card-title activator grey-text text-darken-4">
           {title}
         </span>
-        <p>
-          {year} <span className="right">{type}</span>
+        <p className="card__footer">
+          <span className="card__year">{year}</span> <span className="card__type">{type}</span>
         </p>
       </div>
     </div>
