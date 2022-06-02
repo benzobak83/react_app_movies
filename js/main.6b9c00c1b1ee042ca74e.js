@@ -150,7 +150,9 @@ function Movies(props) {
       }, movie));
     });
   } catch {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+    if (/[а-яА-Я]/.test(props.lastSearch)) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      className: "blue-text text-darken-2 flow-text"
+    }, "\u041D\u0435\u043B\u044C\u0437\u044F \u043D\u0430 \u0440\u0443\u0441\u0441\u043A\u043E\u043C ;)");else return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "blue-text text-darken-2 flow-text"
     }, "Not found :(");
   }
@@ -395,7 +397,8 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
     _defineProperty(this, "state", {
       movies: [],
-      isLoading: true
+      isLoading: true,
+      lastSearch: ''
     });
 
     _defineProperty(this, "url", {
@@ -411,7 +414,8 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       console.log(type);
       fetch(`https://www.omdbapi.com/?apikey=${this.url.api}&s=${search}${type === "all" ? "" : `&type=${type}`}`).then(res => res.json()).then(data => this.setState({
         movies: data.Search,
-        isLoading: false
+        isLoading: false,
+        lastSearch: search
       }));
     });
   }
@@ -432,7 +436,8 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "content container"
     }, isLoading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Preloader_jsx__WEBPACK_IMPORTED_MODULE_3__.Preloader, null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Movies_jsx__WEBPACK_IMPORTED_MODULE_1__.Movies, {
-      movies: movies
+      movies: movies,
+      lastSearch: this.state.lastSearch
     })));
   }
 
@@ -40746,4 +40751,4 @@ document.addEventListener("DOMContentLoaded", e => {
 
 /******/ })()
 ;
-//# sourceMappingURL=main.bcc5155cace357cbae4c.js.map
+//# sourceMappingURL=main.6b9c00c1b1ee042ca74e.js.map
