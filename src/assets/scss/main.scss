@@ -13,6 +13,7 @@
     box-sizing: border-box;
     margin-right: 5px;
     margin-left: 5px;
+   
     @media screen and (max-width: 1444px) {
       & {
         flex: 0 1 32%;
@@ -81,6 +82,7 @@
     }
 }
 img {
-    min-height: 40vh;
+    
+    min-height: 300px;
     max-height: 40vh;
 }
